@@ -18,6 +18,12 @@ public class CommonDivisor {
         return greatestCommonDivisor(y, x % y);
     }
 
+    /**
+     * 空瓶子换饮料的算法
+     *
+     * @param n
+     * @return
+     */
     public static int getMaxNum(int n) {
         int k = 0;
 
@@ -25,11 +31,8 @@ public class CommonDivisor {
             k += n / 3;
             n = n / 3 + n % 3;
         }
-
-        if (n % 3 == 2) {
-            // 如果最后剩下两个, 像老板借一个，然后加1
-            k += 1;
-        }
+        // 如果最后剩下两个, 像老板借一个，然后加1
+        if (n % 3 == 2) k += 1;
 
         return k;
     }
